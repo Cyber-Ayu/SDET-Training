@@ -13,7 +13,7 @@ public class VerifyLogoTest {
 
     @BeforeMethod
     public void setup() {
-        System.setProperty("webdriver.gecko.driver", "src/main/driver/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "JAVA/src/main/driver/geckodriver.exe");
         driver = new FirefoxDriver();
         driver.get("https://www.makemytrip.com/");
     }
