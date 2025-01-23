@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class VerifyLogo {
     public static void main(String[] args) {
-        System.setProperty("webdriver.gecko.driver", "src/main/driver/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "JAVA/src/main/driver/geckodriver.exe");
 
         WebDriver driver = new FirefoxDriver();
         driver.get("https://www.makemytrip.com/");
