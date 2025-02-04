@@ -1,0 +1,12 @@
+# Ignore IDE configuration folders
+.idea/
+.vscode/
+
+# Other common ignores (optional)
+*.log
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.DS_Store
