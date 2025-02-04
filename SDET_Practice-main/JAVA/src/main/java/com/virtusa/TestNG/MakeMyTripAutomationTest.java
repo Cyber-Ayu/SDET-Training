@@ -18,15 +18,20 @@ import java.time.Duration;
 public class MakeMyTripAutomationTest {
 
     private WebDriver driver;
+    WebDriverWait wait;
 
     @BeforeMethod
-    public void setUp() {
-        driver = launchBrowser("https://www.makemytrip.com/");
+    public void setup() {
+        driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+
+        driver.get("https://www.makemytrip.com/");
+        driver.manage().window().maximize();
     }
 
     public static WebDriver launchBrowser(String url) {
-        System.setProperty("webdriver.chrome.driver",
-                "JAVA\\src\\main\\driver\\chromedriver-win64\\chromedriver.exe");
+//        System.setProperty("webdriver.chrome.driver",
+//                "SDET_Practice-main/JAVA/src/main/driver/chromedriver-win64/chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
@@ -53,7 +58,7 @@ public class MakeMyTripAutomationTest {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             WebElement closeButton = wait.until(ExpectedConditions.elementToBeClickable(
-                    By.xpath("/html/body/div[1]/div/div[1]/div[1]/div[2]/div[2]/div/section/span")));
+                    By.xpath("//span[contains(@class, 'close') or text()='X']"))); // Use a more general XPath
             ((JavascriptExecutor) driver).executeScript("arguments[0].click();", closeButton);
             System.out.println("Login popup closed.");
         } catch (Exception e) {
@@ -72,22 +77,25 @@ public class MakeMyTripAutomationTest {
         Assert.assertTrue(flightsTab.isEnabled(), "Flights tab is not clickable");
         interactWithElement(driver, By.xpath("//span[text()='Flights']"), "click", null);
 
-        // Validate that flight search options are displayed and clickable
-        WebElement fromCityInput = driver.findElement(By.xpath("//input[@placeholder='From']"));
-        WebElement toCityInput = driver.findElement(By.xpath("//input[@placeholder='To']"));
-        Assert.assertTrue(fromCityInput.isDisplayed(), "From city input is not displayed");
-        Assert.assertTrue(toCityInput.isDisplayed(), "To city input is not displayed");
+        // Enter the FROM location
+        WebElement fromCityInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='fromCity']")));
+        fromCityInput.click();
+        WebElement fromSearchInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='From']")));
+        fromSearchInput.sendKeys("Mumbai");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(), 'New Delhi, India')]"))).click();
 
-        // Interact with the flight search form
-        interactWithElement(driver, By.xpath("//input[@placeholder='From']"), "sendKeys", "Delhi");
-        interactWithElement(driver, By.xpath("//input[@placeholder='To']"), "sendKeys", "Mumbai");
-
+        // Enter the TO location
+        WebElement toCityInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='toCity']")));
+        toCityInput.click();
+        WebElement toSearchInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='To']")));
+        toSearchInput.sendKeys("Delhi");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(), 'Mumbai, India')]"))).click();
         // Validate that the "Delhi" and "Mumbai" are entered correctly
-        Assert.assertEquals(fromCityInput.getDomProperty("value"), "Delhi", "From city is not entered correctly");
-        Assert.assertEquals(toCityInput.getDomProperty("value"), "Mumbai", "To city is not entered correctly");
+        Assert.assertEquals(fromCityInput.getAttribute("value"), "New Delhi", "From city is not entered correctly");
+        Assert.assertEquals(toCityInput.getAttribute("value"), "Mumbai", "To city is not entered correctly");
 
         // Verify if flight search options are now populated
-        WebElement searchButton = driver.findElement(By.xpath("//button[text()='Search']"));
+        WebElement searchButton = driver.findElement(By.xpath("//button[@type='submit']"));
         Assert.assertTrue(searchButton.isDisplayed(), "Search button is not displayed");
         Assert.assertTrue(searchButton.isEnabled(), "Search button is not clickable");
 

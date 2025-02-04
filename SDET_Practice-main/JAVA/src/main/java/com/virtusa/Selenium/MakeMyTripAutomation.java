@@ -15,7 +15,7 @@ public class MakeMyTripAutomation {
 
     public static WebDriver launchBrowser(String url) {
         System.setProperty("webdriver.chrome.driver",
-                "JAVA\\src\\main\\driver\\chromedriver-win64\\chromedriver.exe");
+                "SDET_Practice-main/JAVA/src/main/driver/chromedriver-win64/chromedriver.exe");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");

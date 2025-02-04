@@ -2,38 +2,38 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-23T11:52:17 IST" name="Suite" finished-at="2025-01-23T11:52:51 IST" duration-ms="34077">
+  <suite started-at="2025-02-04T12:21:32 IST" name="Suite" finished-at="2025-02-04T12:21:52 IST" duration-ms="20060">
     <groups>
     </groups>
-    <test started-at="2025-01-23T11:52:17 IST" name="Test" finished-at="2025-01-23T11:52:51 IST" duration-ms="34077">
-      <class name="com.compAssignment.TestNG.VerifyLogoTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.compAssignment.TestNG.VerifyLogoTest@72967906]" started-at="2025-01-23T11:52:17 IST" name="setup" finished-at="2025-01-23T11:52:25 IST" duration-ms="8105" status="PASS">
+    <test started-at="2025-02-04T12:21:32 IST" name="Test" finished-at="2025-02-04T12:21:52 IST" duration-ms="20060">
+      <class name="com.virtusa.TestNG.MakeMyTripAutomationTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.virtusa.TestNG.MakeMyTripAutomationTest@c730b35]" started-at="2025-02-04T12:21:41 IST" name="setup" finished-at="2025-02-04T12:21:45 IST" duration-ms="3941" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLogoPresence()[pri:0, instance:com.compAssignment.TestNG.VerifyLogoTest@72967906]" started-at="2025-01-23T11:52:25 IST" name="verifyLogoPresence" finished-at="2025-01-23T11:52:25 IST" duration-ms="70" status="PASS">
+        <test-method signature="testMakeMyTripAutomation()[pri:0, instance:com.virtusa.TestNG.MakeMyTripAutomationTest@c730b35]" started-at="2025-02-04T12:21:45 IST" name="testMakeMyTripAutomation" finished-at="2025-02-04T12:21:52 IST" duration-ms="6630" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLogoPresence -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.compAssignment.TestNG.VerifyLogoTest@72967906]" started-at="2025-01-23T11:52:25 IST" name="teardown" finished-at="2025-01-23T11:52:27 IST" duration-ms="1490" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.compAssignment.TestNG.VerifyLogoTest -->
-      <class name="com.compAssignment.TestNG.SelectOneWayTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.compAssignment.TestNG.SelectOneWayTest@776aec5c]" started-at="2025-01-23T11:52:27 IST" name="setup" finished-at="2025-01-23T11:52:32 IST" duration-ms="4935" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="testOneWayFlightSelection()[pri:0, instance:com.compAssignment.TestNG.SelectOneWayTest@776aec5c]" started-at="2025-01-23T11:52:32 IST" name="testOneWayFlightSelection" finished-at="2025-01-23T11:52:50 IST" duration-ms="18654" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testOneWayFlightSelection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.compAssignment.TestNG.SelectOneWayTest@776aec5c]" started-at="2025-01-23T11:52:50 IST" name="tearDown" finished-at="2025-01-23T11:52:51 IST" duration-ms="771" status="PASS">
+        </test-method> <!-- testMakeMyTripAutomation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.virtusa.TestNG.MakeMyTripAutomationTest@c730b35]" started-at="2025-02-04T12:21:52 IST" name="tearDown" finished-at="2025-02-04T12:21:52 IST" duration-ms="448" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.compAssignment.TestNG.SelectOneWayTest -->
+      </class> <!-- com.virtusa.TestNG.MakeMyTripAutomationTest -->
+      <class name="com.virtusa.TestNG.VerifyLogoTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.virtusa.TestNG.VerifyLogoTest@6cf0e0ba]" started-at="2025-02-04T12:21:32 IST" name="setup" finished-at="2025-02-04T12:21:39 IST" duration-ms="6968" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLogoPresence()[pri:0, instance:com.virtusa.TestNG.VerifyLogoTest@6cf0e0ba]" started-at="2025-02-04T12:21:39 IST" name="verifyLogoPresence" finished-at="2025-02-04T12:21:39 IST" duration-ms="149" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogoPresence -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.virtusa.TestNG.VerifyLogoTest@6cf0e0ba]" started-at="2025-02-04T12:21:39 IST" name="teardown" finished-at="2025-02-04T12:21:41 IST" duration-ms="1864" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.virtusa.TestNG.VerifyLogoTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

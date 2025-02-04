@@ -14,7 +14,7 @@ public class VerifyLogoTest {
     @BeforeMethod
     public void setup() {
         // Set up the GeckoDriver for Firefox
-        System.setProperty("webdriver.gecko.driver", "JAVA/src/main/driver/geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "src/main/driver/geckodriver.exe");
         driver = new FirefoxDriver();
         driver.get("https://www.makemytrip.com/");
     }
@@ -22,16 +22,16 @@ public class VerifyLogoTest {
     @Test
     public void verifyLogoPresence() {
         try {
-            // Verify that the logo is displayed on the homepage
-            boolean isLogoDisplayed = driver.findElement(By.xpath("//a[@class='mmtLogo makeFlex']")).isDisplayed();
+            // Verify that the logo image is displayed
+            boolean isLogoDisplayed = driver.findElement(By.xpath("//a[@data-cy='mmtLogo']/img")).isDisplayed();
 
             // Assert that the logo is displayed
             Assert.assertTrue(isLogoDisplayed, "Logo is not displayed on the MakeMyTrip homepage.");
 
             // Verify the logo's alt attribute for more validation
-            String altText = driver.findElement(By.xpath("//a[@class='mmtLogo makeFlex']")).getDomProperty("alt");
+            String altText = driver.findElement(By.xpath("//a[@data-cy='mmtLogo']/img")).getAttribute("alt");
             Assert.assertNotNull(altText, "The alt attribute of the logo is missing.");
-            Assert.assertTrue(altText.contains("MakeMyTrip"),
+            Assert.assertTrue(altText.contains("Make My Trip"),
                     "The alt attribute of the logo does not contain the expected value.");
 
             // Verify the page title contains 'MakeMyTrip' to ensure correct page
