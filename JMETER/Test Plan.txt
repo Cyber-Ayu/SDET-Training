@@ -1,7 +1,0 @@
-Test Plan
- └── Thread Group
-      ├── HTTP Request (GET https://www.makemytrip.com/)
-      └── Response Assertion (Check for "Makemytrip" in response)
-      └── View Results Tree (Listener)
-      └── Aggregate Report (Listener)
-      └── Summary Report (Listener)
