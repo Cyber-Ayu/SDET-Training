@@ -81,14 +81,14 @@ public class MakeMyTripAutomationTest {
         WebElement fromCityInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='fromCity']")));
         fromCityInput.click();
         WebElement fromSearchInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='From']")));
-        fromSearchInput.sendKeys("Mumbai");
+        fromSearchInput.sendKeys("New Delhi");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(), 'New Delhi, India')]"))).click();
 
         // Enter the TO location
         WebElement toCityInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='toCity']")));
         toCityInput.click();
         WebElement toSearchInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@placeholder='To']")));
-        toSearchInput.sendKeys("Delhi");
+        toSearchInput.sendKeys("Mumbai");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(), 'Mumbai, India')]"))).click();
         // Validate that the "Delhi" and "Mumbai" are entered correctly
         Assert.assertEquals(fromCityInput.getAttribute("value"), "New Delhi", "From city is not entered correctly");
